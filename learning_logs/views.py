@@ -4,6 +4,8 @@ from django.shortcuts import render
 def index(request):
     return render(request,'learning_logs/index.html')
 
+def topics(request):
+    return render(request,'learning_logs/topic.html')
 
 
 
@@ -12,4 +14,4 @@ def index(request):
 
 
 
-    
+
