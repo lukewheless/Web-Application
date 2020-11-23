@@ -62,7 +62,7 @@ def new_entry(request, topic_id):
 
 def edit_entry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
-    topic = Entry.topic
+    topic = entry.topic
 
     if request.method != 'POST':
         form = EntryForm(instance=entry) # loads form with existing entry 
