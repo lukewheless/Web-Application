@@ -1,10 +1,10 @@
 import os 
-import django 
+import django
+from learning_log.models import Topic
+from django.contrib.auth.models import User 
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "learning_log.settings")
 django.setup()
-
-from learning_log.models import Topic
 
 topics = Topic.objects.all()
 
@@ -19,6 +19,9 @@ entries = t.entry_set.all()
 
 for entry in entries:
     print(entry)
+
+for user in User.objects.all():
+    print(user.username, user.id)
 
 
 

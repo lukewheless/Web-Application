@@ -9,7 +9,7 @@ def index(request):
     return render(request,'learning_logs/index.html')
 
 #to get all topics
-@login_required             #processes this instruction before access info
+@login_required
 def topics(request):
     topics = Topic.objects.filter(owner=request.user).order_by("date_added")
     #specific filter for users topics
@@ -19,8 +19,8 @@ def topics(request):
     return render(request,'learning_logs/topics.html', context)
 
 #individual topics
-@login_required 
-def topic(request, t_id):
+@login_required             #processes this instruction before access info
+def topic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
 
     if topic.owner != request.user:
