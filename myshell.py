@@ -12,8 +12,8 @@ for topic in topic:
     print("Topic ID:", topic.id, " Topic:", topic)
 
 t = Topic.objects.get(id=1)
-print(t.text)
-print(t.date_added)
+#print(t.text)
+#print(t.date_added)
 
 entries = t.entry_set.all()
 
